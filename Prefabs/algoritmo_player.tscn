@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj12vaprl54ji"]
+
+[ext_resource type="Script" uid="uid://crlnhpafrnu4h" path="res://algoritmo_player.gd" id="1_bgfer"]
+
+[node name="AlgoritmoPlayer" type="VBoxContainer"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 14
+script = ExtResource("1_bgfer")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Algoritmo do Jogador"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+text = "Se o jogador apertou nas setinhas:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "    Mover com velocidade:"
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer"]
+layout_mode = 2
+max_value = 800.0
+alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+text = "    E aceleração: "
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer3"]
+layout_mode = 2
+max_value = 10.0
+rounded = true
+alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="HBoxContainer4"]
+layout_mode = 2
+text = "    E desaceleração: "
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer4"]
+layout_mode = 2
+max_value = 10.0
+rounded = true
+alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 2
+text = "Se o jogador apertou \"Espaço\":"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "    Pular com força: "
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+alignment = 1
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="value_changed" from="HBoxContainer/SpinBox" to="." method="velocidade_changed"]
+[connection signal="value_changed" from="HBoxContainer3/SpinBox" to="." method="aceleracao_changed"]
+[connection signal="value_changed" from="HBoxContainer4/SpinBox" to="." method="desaceleracao_changed"]
+[connection signal="value_changed" from="HBoxContainer2/SpinBox" to="." method="pulo_changed"]
