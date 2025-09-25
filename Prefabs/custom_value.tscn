@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh1iy6i7pdpdh"]
+
+[ext_resource type="Script" uid="uid://sco72ns3osp7" path="res://Scripts/CustomValue.gd" id="1_mykpn"]
+[ext_resource type="Theme" uid="uid://bbljki0tilr60" path="res://Theme.tres" id="2_tk3x2"]
+
+[node name="CustomValue" type="HBoxContainer"]
+offset_right = 340.0
+offset_bottom = 65.0
+theme_override_constants/separation = 10
+script = ExtResource("1_mykpn")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme = ExtResource("2_tk3x2")
+theme_override_font_sizes/font_size = 40
+text = "-"
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="."]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme = ExtResource("2_tk3x2")
+theme_override_font_sizes/font_size = 40
+text = "+"
+
+[connection signal="pressed" from="Button" to="." method="diminuir"]
+[connection signal="pressed" from="Button2" to="." method="aumentar"]

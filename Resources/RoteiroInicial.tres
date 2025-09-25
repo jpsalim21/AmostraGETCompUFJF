@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="Roteiro" load_steps=9 format=3 uid="uid://cw684a2xedv8v"]
+
+[ext_resource type="Script" uid="uid://cnf513dby5e7n" path="res://Scripts/Cutscenes/RoteiroFalas.gd" id="1_26nnv"]
+[ext_resource type="Script" uid="uid://0oxrb0gk1i53" path="res://Scripts/Cutscenes/Falas.gd" id="1_ijdxt"]
+
+[sub_resource type="Resource" id="Resource_kfkn8"]
+script = ExtResource("1_ijdxt")
+texto = "Olá, tudo bem? Nós somos do [color=red]GETComp[/color] e queremos mostrar um pouco de como é programar jogos!"
+humor = "normal"
+metadata/_custom_type_script = "uid://0oxrb0gk1i53"
+
+[sub_resource type="Resource" id="Resource_vgn87"]
+script = ExtResource("1_ijdxt")
+texto = "[shake]Mas programar um jogo???? Isso não é muito difícil?[/shake]"
+humor = "assustado"
+metadata/_custom_type_script = "uid://0oxrb0gk1i53"
+
+[sub_resource type="Resource" id="Resource_ulsu7"]
+script = ExtResource("1_ijdxt")
+texto = "Tudo bem! Pode ficar tranquilo que nós vamos te ajudar"
+humor = "normal"
+metadata/_custom_type_script = "uid://0oxrb0gk1i53"
+
+[sub_resource type="Resource" id="Resource_ijdxt"]
+script = ExtResource("1_ijdxt")
+texto = "Bom, podemos começar apresentando o [b]algoritmo[/b] do jogador. Um algoritmo é uma [b]série de instruções[/b] que o [b]computador[/b] vai seguir para atingir um objetivo"
+humor = "normal"
+metadata/_custom_type_script = "uid://0oxrb0gk1i53"
+
+[sub_resource type="Resource" id="Resource_rvg30"]
+script = ExtResource("1_ijdxt")
+texto = "No caso, o algoritmo do jogador determina como o bonequinho vai responder aos botões apertados. "
+humor = "normal"
+metadata/_custom_type_script = "uid://0oxrb0gk1i53"
+
+[sub_resource type="Resource" id="Resource_l46qc"]
+script = ExtResource("1_ijdxt")
+texto = "Seria legal a gente começar aumentando a minha velocidade, parece que está muito baixa!"
+humor = "normal"
+metadata/_custom_type_script = "uid://0oxrb0gk1i53"
+
+[resource]
+script = ExtResource("1_26nnv")
+nomeRoteiro = &"inicial"
+falas = Array[ExtResource("1_ijdxt")]([SubResource("Resource_kfkn8"), SubResource("Resource_vgn87"), SubResource("Resource_ulsu7"), SubResource("Resource_ijdxt"), SubResource("Resource_rvg30"), SubResource("Resource_l46qc")])
+metadata/_custom_type_script = "uid://cnf513dby5e7n"

@@ -1,0 +1,9 @@
+Criar fase
+Melhorar UI do algoritmo:
+	Criar um objeto para controlar os valores
+
+Criar inimigo
+Criar script do inimigo
+
+Escolher fontes melhores
+Impedir de cair no limbo

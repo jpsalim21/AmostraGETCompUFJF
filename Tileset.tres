@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dq6v8cam86n4i"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dq6v8cam86n4i"]
 
 [ext_resource type="Texture2D" uid="uid://dof7jeu55l17j" path="res://Sprites/tileset.png" id="1_gj48w"]
+[ext_resource type="Texture2D" uid="uid://ba0x2gc4hruid" path="res://Sprites/Espinhos.png" id="2_kco6d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kco6d"]
 texture = ExtResource("1_gj48w")
@@ -142,6 +143,12 @@ texture = ExtResource("1_gj48w")
 14:21/0 = 0
 15:21/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bnoas"]
+texture = ExtResource("2_kco6d")
+0:0/0 = 0
+1:0/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_kco6d")
+sources/2 = SubResource("TileSetAtlasSource_bnoas")
