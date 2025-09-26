@@ -13,9 +13,14 @@ static var JUMP_VELOCITY : float = -200.0
 static var aceleracao : float = 0.1
 static var desaceleracao : float = 0.1
 
+var elapsedTime : float = 0
+var maxTime : float = 1
+var anchorPos : Vector2
+
 var ativo : bool = true
 
 func _ready() -> void:
+	anchorPos = global_position
 	balao_fala.comecouCutscene.connect(comecouCutscene)
 	balao_fala.terminouRoteiro.connect(terminouCutscene)
 	balao_fala.novaFala.connect(comecaFala)
@@ -33,8 +38,16 @@ func terminouCutscene(nome : StringName):
 	ativo = true
 
 func _physics_process(delta: float) -> void:
+	elapsedTime += delta
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	elif elapsedTime > maxTime:
+		anchorPos = global_position
+		elapsedTime = 0
+	
+	if global_position.y > 80:
+		global_position = anchorPos
 	
 	if !ativo:
 		velocity.x = 0

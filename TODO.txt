@@ -1,9 +1,10 @@
 Criar fase
 Melhorar UI do algoritmo:
 	Criar um objeto para controlar os valores
-
-Criar inimigo
-Criar script do inimigo
+Resetar os valores após resetar a cena
 
 Escolher fontes melhores
 Impedir de cair no limbo
+
+Criar inimigo
+Criar script do inimigo

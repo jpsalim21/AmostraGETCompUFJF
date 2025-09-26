@@ -10,6 +10,7 @@ extends VBoxContainer
 @onready var panelPai: PanelScript = $"../.."
 
 var estado : String = ""
+var liberado = false
 
 func _ready() -> void:
 	_on_visibility_changed()
@@ -28,6 +29,15 @@ func terminouCutscene(nome : StringName):
 		panelPai.mudarVisibilidade(true)
 		velocidadeValue.habilitar(false)
 		estado = "esperandoPulo"
+	elif nome == "diminuirPulo":
+		estado = "diminuindoPulo"
+		player.ativo = false
+		panelPai.mudarVisibilidade(true)
+		velocidadeValue.habilitar(false)
+	elif nome == "Final":
+		liberado = true
+		velocidadeValue.habilitar(true)
+		puloValue.habilitar(true)
 
 func _on_visibility_changed() -> void:
 	if velocidadeValue: velocidadeValue.valor = int(Player.SPEED)
@@ -47,7 +57,16 @@ func pulo_changed(value: float) -> void:
 		terminarCutscene()
 		velocidadeValue.habilitar(true)
 		estado = ""
+	elif estado == "diminuindoPulo" and value == 3:
+		terminarCutscene()
+		velocidadeValue.habilitar(true)
+		estado = ""
 
 func terminarCutscene():
 	panelPai.mudarVisibilidade(false)
 	player.ativo = true
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("J") and liberado:
+		panelPai.alternarVisibilidade()
+		player.ativo = !player.ativo
