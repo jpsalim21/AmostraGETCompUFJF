@@ -20,6 +20,8 @@ var anchorPos : Vector2
 var ativo : bool = true
 
 func _ready() -> void:
+	SPEED = 50.0
+	JUMP_VELOCITY = -200
 	anchorPos = global_position
 	balao_fala.comecouCutscene.connect(comecouCutscene)
 	balao_fala.terminouRoteiro.connect(terminouCutscene)

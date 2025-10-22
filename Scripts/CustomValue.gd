@@ -9,6 +9,14 @@ extends HBoxContainer
 @onready var button: Button = $Button
 @onready var button_2: Button = $Button2
 
+var materialButton1 : ShaderMaterial
+var materialButton2 : ShaderMaterial
+
+func _ready() -> void:
+	materialButton1 = button.material
+	materialButton2 = button_2.material
+	pass
+
 signal valorMudou(valor)
 
 var valor : float = 0:

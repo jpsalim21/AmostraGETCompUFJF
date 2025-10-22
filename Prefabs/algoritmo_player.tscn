@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj12vaprl54ji"]
+[gd_scene load_steps=7 format=3 uid="uid://bj12vaprl54ji"]
 
 [ext_resource type="Script" uid="uid://crlnhpafrnu4h" path="res://Scripts/algoritmo_player.gd" id="1_bgfer"]
 [ext_resource type="FontFile" uid="uid://c1m3p223wjs3r" path="res://Fontes/Menlo-Regular.ttf" id="2_uwotx"]
 [ext_resource type="PackedScene" uid="uid://dh1iy6i7pdpdh" path="res://Prefabs/custom_value.tscn" id="2_ypjh8"]
+[ext_resource type="Shader" uid="uid://b12w7k06oos7y" path="res://Shader/Blink.gdshader" id="4_uwotx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2i52v"]
+shader = ExtResource("4_uwotx")
+shader_parameter/isActive = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a6y8o"]
+shader = ExtResource("4_uwotx")
+shader_parameter/isActive = false
 
 [node name="AlgoritmoPlayer" type="VBoxContainer"]
 offset_right = 655.0
@@ -72,4 +81,12 @@ vertical_alignment = 1
 layout_mode = 2
 maxValue = 10.0
 
+[node name="Button" parent="HBoxContainer2/CustomValue2" index="0"]
+material = SubResource("ShaderMaterial_2i52v")
+
+[node name="Button2" parent="HBoxContainer2/CustomValue2" index="2"]
+material = SubResource("ShaderMaterial_a6y8o")
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+
+[editable path="HBoxContainer2/CustomValue2"]

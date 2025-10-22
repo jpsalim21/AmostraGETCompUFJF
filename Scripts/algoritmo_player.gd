@@ -9,6 +9,9 @@ extends VBoxContainer
 @onready var player: Player = %Player
 @onready var panelPai: PanelScript = $"../.."
 
+@onready var custom_value: CustomValue = $HBoxContainer/CustomValue
+@onready var custom_value_2: CustomValue = $HBoxContainer2/CustomValue2
+
 var estado : String = ""
 var liberado = false
 
@@ -24,16 +27,19 @@ func terminouCutscene(nome : StringName):
 		panelPai.mudarVisibilidade(true)
 		puloValue.habilitar(false)
 		estado = "esperandoVelocidade"
+		custom_value.materialButton2.set_shader_parameter("isActive", true)
 	elif nome == "pular":
 		player.ativo = false
 		panelPai.mudarVisibilidade(true)
 		velocidadeValue.habilitar(false)
 		estado = "esperandoPulo"
+		custom_value_2.materialButton2.set_shader_parameter("isActive", true)
 	elif nome == "diminuirPulo":
 		estado = "diminuindoPulo"
 		player.ativo = false
 		panelPai.mudarVisibilidade(true)
 		velocidadeValue.habilitar(false)
+		custom_value_2.materialButton1.set_shader_parameter("isActive", true)
 	elif nome == "Final":
 		liberado = true
 		velocidadeValue.habilitar(true)
@@ -64,6 +70,10 @@ func pulo_changed(value: float) -> void:
 
 func terminarCutscene():
 	panelPai.mudarVisibilidade(false)
+	custom_value.materialButton1.set_shader_parameter("isActive", false)
+	custom_value.materialButton2.set_shader_parameter("isActive", false)
+	custom_value_2.materialButton1.set_shader_parameter("isActive", false)
+	custom_value_2.materialButton2.set_shader_parameter("isActive", false)
 	player.ativo = true
 
 func _unhandled_input(event: InputEvent) -> void:

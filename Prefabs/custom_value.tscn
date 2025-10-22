@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh1iy6i7pdpdh"]
+[gd_scene load_steps=6 format=3 uid="uid://dh1iy6i7pdpdh"]
 
 [ext_resource type="Script" uid="uid://sco72ns3osp7" path="res://Scripts/CustomValue.gd" id="1_mykpn"]
 [ext_resource type="Theme" uid="uid://bbljki0tilr60" path="res://Theme.tres" id="2_tk3x2"]
+[ext_resource type="Shader" uid="uid://b12w7k06oos7y" path="res://Shader/Blink.gdshader" id="3_5dx6a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5dx6a"]
+shader = ExtResource("3_5dx6a")
+shader_parameter/isActive = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_14n61"]
+shader = ExtResource("3_5dx6a")
+shader_parameter/isActive = false
 
 [node name="CustomValue" type="HBoxContainer"]
 offset_right = 340.0
@@ -10,6 +19,7 @@ theme_override_constants/separation = 10
 script = ExtResource("1_mykpn")
 
 [node name="Button" type="Button" parent="."]
+material = SubResource("ShaderMaterial_5dx6a")
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 theme = ExtResource("2_tk3x2")
@@ -33,6 +43,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button2" type="Button" parent="."]
+material = SubResource("ShaderMaterial_14n61")
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 theme = ExtResource("2_tk3x2")

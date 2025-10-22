@@ -1,10 +1,8 @@
 class_name PanelScript
 extends Panel
 
-
 @onready var animation: AnimationPlayer = $"../AnimationPlayer"
 var v = false
-
 
 func mudarVisibilidade(visivel : bool):
 	if visivel:
